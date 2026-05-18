@@ -23,6 +23,11 @@ const productSchema = new Schema<IProduct>({
   },
 });
 
+// Indexes
+productSchema.index({ name: 1 });
+
+productSchema.index({ category: 1 });
+
 export const Product: Model<IProduct> = mongoose.model<IProduct>(
   "Product",
   productSchema

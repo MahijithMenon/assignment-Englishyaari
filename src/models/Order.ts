@@ -55,6 +55,14 @@ const orderSchema = new Schema<IOrder>({
   },
 });
 
+// Indexes
+orderSchema.index({ userId: 1 });
+
+orderSchema.index({ createdAt: -1 });
+
+// Compound index
+orderSchema.index({ userId: 1, createdAt: -1 });
+
 export const Order: Model<IOrder> = mongoose.model<IOrder>(
   "Order",
   orderSchema
