@@ -38,6 +38,7 @@ export const topSellingProductsService = () => {
 }
 
 export const userPurchaseSummaryService = (userId: string) => {
+  // Aggregation pipeline to calculate total amount spent and total orders for a user
     return Order.aggregate([
     {
       $match: {

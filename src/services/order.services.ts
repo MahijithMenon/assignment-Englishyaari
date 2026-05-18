@@ -26,6 +26,7 @@ export const orderCreationService = (
 };
 
 export const MonthlyRevenueCalculationService = () => {
+  // Aggregation pipeline to calculate monthly revenue
   return Order.aggregate([
       {
         $group: {
